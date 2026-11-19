@@ -1,0 +1,116 @@
+/* OUTRUN VICE editor: dark room, sunset chrome accents, the cover large on the right. */
+:root {
+  --bg: #0a0218;
+  --panel: #170a33;
+  --line: #3d1a63;
+  --text: #f5efff;
+  --muted: #b3a3d6;
+  --pink: #ff2e88;
+  --cyan: #2de2ff;
+  --gold: #ffd23d;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.45 Arial, sans-serif;
+}
+.app {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  min-height: 100vh;
+}
+.controls {
+  width: 330px;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.controls h1 {
+  margin: 0;
+  font-size: 26px;
+  letter-spacing: 0.06em;
+  color: #fff;
+  text-shadow: 0 0 18px var(--pink), 0 0 42px rgba(255, 46, 136, 0.6);
+}
+.sub { margin: 0; color: var(--muted); }
+fieldset {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0;
+  background: var(--panel);
+}
+legend {
+  color: var(--cyan);
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+label { display: block; margin: 8px 0 0; color: var(--muted); font-size: 13px; }
+input[type="text"], select {
+  width: 100%;
+  margin-top: 4px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #0d0524;
+  color: var(--text);
+  font-size: 15px;
+}
+input[type="range"] { width: 100%; accent-color: var(--pink); }
+input[type="file"] { display: block; margin-top: 4px; color: var(--text); }
+button {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #22104a;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 14px;
+}
+button:hover { border-color: var(--cyan); }
+button.picked {
+  background: #4a1160;
+  border-color: var(--pink);
+  box-shadow: 0 0 12px rgba(255, 46, 136, 0.45);
+}
+button.primary {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  font-size: 17px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff2e88, #f59e0b);
+  border: none;
+}
+.hint { margin: 8px 0 0; color: var(--cyan); font-weight: bold; }
+#status { min-height: 1.2em; color: #7cf7c4; }
+.preview {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+#cover {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid var(--line);
+  border-radius: 6px;
+  box-shadow: 0 0 40px rgba(255, 46, 136, 0.35);
+}
+/* Screenshot mode: the cover alone, filling the viewport. */
+body.shot-cover { background: #05010f; }
+body.shot-cover .app { padding: 0; }
+body.shot-cover .controls { display: none; }
+body.shot-cover .preview { padding: 0; }
+body.shot-cover #cover { border: none; border-radius: 0; box-shadow: none; max-width: none; }
+@media (max-width: 900px) {
+  .app { flex-direction: column; }
+  .controls { width: auto; }
+}

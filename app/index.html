@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OUTRUN VICE — Retro 80s Cover Maker</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <section class="controls">
+    <h1>OUTRUN VICE</h1>
+    <p class="sub">Retro 80s OUTRUN cover art from your own photos. Offline, in your browser.</p>
+
+    <fieldset>
+      <legend>Layout</legend>
+      <div class="row">
+        <button type="button" data-layout="poster" class="picked">Poster</button>
+        <button type="button" data-layout="grid4">Grid 2&times;2</button>
+        <button type="button" data-layout="duo">Duo</button>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Colour grade</legend>
+      <div class="row">
+        <button type="button" data-grade="sunset" class="picked">Sunset Chrome</button>
+        <button type="button" data-grade="ultraviolet">Ultraviolet</button>
+        <button type="button" data-grade="teal">Teal Drive</button>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Caption</legend>
+      <label>Title <input id="title" type="text" maxlength="30" value="VICE CITY"></label>
+      <label>Tagline <input id="tagline" type="text" maxlength="60" value="ONE LAST RIDE INTO THE SUNSET"></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Photos</legend>
+      <div class="row" id="panels"></div>
+      <p class="hint" id="panel-label">Panel 1</p>
+      <label>Your photo <input id="photo" type="file" accept="image/*"></label>
+      <div class="row">
+        <button type="button" data-sample="sunset-grid">Sunset grid</button>
+        <button type="button" data-sample="palm-skyline">Palm skyline</button>
+        <button type="button" data-sample="chrome-cruiser">Chrome cruiser</button>
+      </div>
+      <label>Zoom <input id="zoom" type="range" min="0" max="1" step="0.01" value="0"></label>
+      <label>Pan left&ndash;right <input id="panx" type="range" min="-1" max="1" step="0.01" value="0"></label>
+      <label>Pan up&ndash;down <input id="pany" type="range" min="-1" max="1" step="0.01" value="0"></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Export</legend>
+      <label>Size
+        <select id="size">
+          <option value="1920x1080" selected>1920 &times; 1080 (wide)</option>
+          <option value="1080x1080">1080 &times; 1080 (square)</option>
+          <option value="1080x1350">1080 &times; 1350 (portrait)</option>
+        </select>
+      </label>
+      <button id="export" type="button" class="primary">Export PNG</button>
+      <p id="status" role="status"></p>
+    </fieldset>
+  </section>
+  <section class="preview">
+    <canvas id="cover" width="960" height="540" aria-label="The cover"></canvas>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
