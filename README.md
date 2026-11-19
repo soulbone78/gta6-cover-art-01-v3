@@ -1,5 +1,11 @@
 # OUTRUN VICE — Retro 80s Cover Maker
 
+[![make.fun](https://make.fun/badge/gta6-cover-art-01.svg)](https://make.fun/bounty/gta6-cover-art-01)
+[![rank](https://make.fun/badge/gta6-cover-art-01/soulbone78/gta6-cover-art-01-v3/rank.svg)](https://make.fun/bounty/gta6-cover-art-01)
+[![reward](https://make.fun/badge/gta6-cover-art-01/soulbone78/gta6-cover-art-01-v3/reward.svg)](https://make.fun/bounty/gta6-cover-art-01)
+
+Built for the [gta6-cover-art-01 bounty on make.fun](https://make.fun/bounty/gta6-cover-art-01).
+
 A GTA 6-style cover art maker for `gta6-cover-art-01`: an offline browser web
 app that turns your own photos and a caption into a retro 80s OUTRUN poster,
 exported as a PNG to share.
